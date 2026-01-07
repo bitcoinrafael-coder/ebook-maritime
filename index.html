@@ -1,0 +1,332 @@
+import React, { useState } from 'react';
+import { Download, Facebook, Send, BookOpen, Anchor, Ship, DollarSign, Award } from 'lucide-react';
+
+const MaritimeEbookPromo = () => {
+  const [activeTab, setActiveTab] = useState('cover');
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-900 p-8">
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-bold text-white mb-2 flex items-center justify-center gap-3">
+            <Ship className="w-10 h-10" />
+            Maritime E-book Creator
+          </h1>
+          <p className="text-cyan-200">Desain Cover & Template Promosi Facebook</p>
+        </div>
+
+        {/* Tab Navigation */}
+        <div className="flex gap-4 mb-6 justify-center">
+          <button
+            onClick={() => setActiveTab('cover')}
+            className={`px-6 py-3 rounded-lg font-semibold transition-all ${
+              activeTab === 'cover'
+                ? 'bg-cyan-500 text-white shadow-lg'
+                : 'bg-white/10 text-white hover:bg-white/20'
+            }`}
+          >
+            <BookOpen className="inline mr-2 w-5 h-5" />
+            Cover E-book
+          </button>
+          <button
+            onClick={() => setActiveTab('promo')}
+            className={`px-6 py-3 rounded-lg font-semibold transition-all ${
+              activeTab === 'promo'
+                ? 'bg-cyan-500 text-white shadow-lg'
+                : 'bg-white/10 text-white hover:bg-white/20'
+            }`}
+          >
+            <Facebook className="inline mr-2 w-5 h-5" />
+            Template FB Ads
+          </button>
+        </div>
+
+        {/* Cover Design */}
+        {activeTab === 'cover' && (
+          <div className="bg-white rounded-2xl shadow-2xl p-8">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+              Desain Cover E-book Profesional
+            </h2>
+            
+            {/* E-book Cover */}
+            <div className="relative w-full max-w-md mx-auto aspect-[3/4] bg-gradient-to-br from-blue-600 via-cyan-600 to-blue-800 rounded-lg shadow-2xl overflow-hidden mb-6">
+              {/* Top Badge */}
+              <div className="absolute top-6 right-6 bg-yellow-400 text-blue-900 px-4 py-2 rounded-full font-bold text-sm shadow-lg transform rotate-12">
+                BEST SELLER
+              </div>
+              
+              {/* Ship Icon Background */}
+              <div className="absolute top-20 left-1/2 transform -translate-x-1/2 opacity-10">
+                <Anchor className="w-64 h-64 text-white" />
+              </div>
+
+              {/* Content */}
+              <div className="relative z-10 p-8 h-full flex flex-col justify-between">
+                <div>
+                  <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg inline-block mb-4">
+                    <p className="text-white text-sm font-semibold">PANDUAN EKSKLUSIF</p>
+                  </div>
+                  
+                  <h1 className="text-4xl font-black text-white leading-tight mb-4">
+                    RAHASIA<br />
+                    LOLOS<br />
+                    INTERVIEW<br />
+                    PELAUT
+                  </h1>
+                  
+                  <div className="bg-yellow-400 text-blue-900 px-4 py-3 rounded-lg inline-block">
+                    <p className="font-bold text-xl flex items-center gap-2">
+                      <DollarSign className="w-6 h-6" />
+                      Kapal Pesiar & Cargo
+                    </p>
+                    <p className="text-sm font-semibold">Gaji USD 2000++/Bulan</p>
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  <div className="bg-white/90 backdrop-blur-sm p-3 rounded-lg">
+                    <p className="text-blue-900 font-bold text-sm flex items-center gap-2">
+                      <Award className="w-5 h-5" />
+                      ✓ 50+ Tips Interview Terbukti Berhasil
+                    </p>
+                  </div>
+                  <div className="bg-white/90 backdrop-blur-sm p-3 rounded-lg">
+                    <p className="text-blue-900 font-bold text-sm">
+                      ✓ Template Jawaban Pertanyaan Sulit
+                    </p>
+                  </div>
+                  <div className="bg-white/90 backdrop-blur-sm p-3 rounded-lg">
+                    <p className="text-blue-900 font-bold text-sm">
+                      ✓ Bonus: Checklist Dokumen Lengkap
+                    </p>
+                  </div>
+                </div>
+
+                <div className="text-center mt-4">
+                  <p className="text-white font-semibold text-lg">
+                    By Maritime Career Expert
+                  </p>
+                  <p className="text-cyan-200 text-sm">
+                    Pengalaman 10+ Tahun Industri Maritim
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Download Button */}
+            <div className="text-center">
+              <button className="bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all flex items-center gap-3 mx-auto">
+                <Download className="w-6 h-6" />
+                Download Template Canva
+              </button>
+              <p className="text-gray-600 text-sm mt-4">
+                Edit di Canva dengan template yang sudah siap pakai!
+              </p>
+            </div>
+          </div>
+        )}
+
+        {/* Facebook Ads Template */}
+        {activeTab === 'promo' && (
+          <div className="bg-white rounded-2xl shadow-2xl p-8">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+              Template Promosi Facebook Ads
+            </h2>
+
+            {/* FB Post Preview */}
+            <div className="border-2 border-gray-200 rounded-xl p-6 mb-6 bg-gray-50">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-full flex items-center justify-center">
+                  <Ship className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <p className="font-bold text-gray-800">Maritime Career Indonesia</p>
+                  <p className="text-sm text-gray-500">Sponsored · 📍 Indonesia</p>
+                </div>
+              </div>
+
+              {/* Post Content */}
+              <div className="space-y-4">
+                <div className="bg-gradient-to-r from-red-500 to-pink-500 text-white p-4 rounded-lg font-bold text-center text-xl">
+                  🎁 GRATIS E-BOOK PELAUT! 🚢
+                </div>
+
+                <p className="text-gray-800 font-semibold text-lg">
+                  💰 Mau Gaji USD 2000++ Per Bulan Jadi Pelaut?
+                </p>
+
+                <p className="text-gray-700 leading-relaxed">
+                  Dapatkan GRATIS E-book:<br />
+                  <span className="font-bold text-blue-600">
+                    "Rahasia Lolos Interview Pelaut Kapal Pesiar & Cargo"
+                  </span>
+                </p>
+
+                <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 space-y-2">
+                  <p className="font-bold text-gray-800 flex items-center gap-2">
+                    <Award className="w-5 h-5 text-yellow-600" />
+                    Isi E-book:
+                  </p>
+                  <ul className="space-y-1 text-gray-700 ml-6">
+                    <li>✅ 50+ Tips Interview yang Terbukti Berhasil</li>
+                    <li>✅ Template Jawaban Pertanyaan Sulit</li>
+                    <li>✅ Cara Mempersiapkan Dokumen dengan Benar</li>
+                    <li>✅ Strategi Negosiasi Gaji Maksimal</li>
+                    <li>✅ Bonus: Checklist Pra-Interview</li>
+                  </ul>
+                </div>
+
+                <div className="bg-green-500 text-white p-4 rounded-lg text-center font-bold">
+                  <p className="text-2xl mb-2">🎁 100% GRATIS!</p>
+                  <p className="text-sm">Hanya untuk 100 orang pertama hari ini!</p>
+                </div>
+
+                {/* Mock Image */}
+                <div className="relative w-full aspect-video bg-gradient-to-br from-blue-600 to-cyan-600 rounded-lg flex items-center justify-center">
+                  <div className="text-center text-white">
+                    <BookOpen className="w-20 h-20 mx-auto mb-4 opacity-80" />
+                    <p className="text-3xl font-black">E-BOOK GRATIS</p>
+                    <p className="text-xl">10 Pilar Sukses Interview Pelaut</p>
+                  </div>
+                </div>
+
+                <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white p-6 rounded-xl text-center">
+                  <p className="font-bold text-lg mb-3">
+                    📲 KLIK HUBUNGI SEKARANG
+                  </p>
+                  <div className="bg-white text-blue-600 py-3 px-6 rounded-full inline-flex items-center gap-2 font-bold">
+                    <Send className="w-5 h-5" />
+                    Ngobrol di WhatsApp
+                  </div>
+                  <p className="text-sm mt-3 text-cyan-100">
+                    Langsung download via WA • Proses cepat 30 detik
+                  </p>
+                </div>
+
+                <p className="text-gray-600 text-sm italic text-center">
+                  ⚠️ Penawaran terbatas! Jangan sampai kehabisan!
+                </p>
+              </div>
+            </div>
+
+            {/* Copy Text Button */}
+            <div className="space-y-4">
+              <div className="bg-gray-100 p-6 rounded-lg">
+                <h3 className="font-bold text-gray-800 mb-3 flex items-center gap-2">
+                  <Facebook className="w-5 h-5 text-blue-600" />
+                  Copy Teks Iklan Facebook:
+                </h3>
+                <div className="bg-white p-4 rounded border border-gray-300 text-sm text-gray-700 font-mono whitespace-pre-wrap mb-3">
+{`🎁 GRATIS E-BOOK PELAUT! 🚢
+
+💰 Mau Gaji USD 2000++ Per Bulan Jadi Pelaut?
+
+Dapatkan GRATIS E-book:
+"Rahasia Lolos Interview Pelaut Kapal Pesiar & Cargo"
+
+✅ 50+ Tips Interview Terbukti Berhasil
+✅ Template Jawaban Pertanyaan Sulit
+✅ Cara Persiapan Dokumen Lengkap
+✅ Strategi Negosiasi Gaji
+✅ Bonus: Checklist Pra-Interview
+
+🎁 100% GRATIS untuk 100 orang pertama!
+
+📲 KLIK "HUBUNGI SEKARANG" atau "KIRIM PESAN"
+Dapatkan via WhatsApp dalam 30 detik!
+
+⚠️ Penawaran Terbatas! Ambil Sekarang!
+
+#PelautIndonesia #KarirMaritim #GajiDollar #SeafarerLife #InterviewTips`}
+                </div>
+                <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold w-full hover:bg-blue-700 transition-all">
+                  Copy Teks Iklan
+                </button>
+              </div>
+
+              <div className="bg-cyan-50 p-6 rounded-lg border-2 border-cyan-200">
+                <h3 className="font-bold text-gray-800 mb-3">
+                  📝 Tips Setting Facebook Ads:
+                </h3>
+                <ul className="space-y-2 text-gray-700 text-sm">
+                  <li><span className="font-bold">Target:</span> Pria 18-35 tahun, Indonesia</li>
+                  <li><span className="font-bold">Minat:</span> Maritime, Pelaut, Seaman, Kapal Pesiar</li>
+                  <li><span className="font-bold">Call to Action:</span> "Send Message" atau "Contact Us"</li>
+                  <li><span className="font-bold">Budget:</span> Mulai dari Rp 50.000/hari</li>
+                  <li><span className="font-bold">Link:</span> Hubungkan ke WhatsApp Business Anda</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Instructions */}
+        <div className="mt-8 bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white">
+          <h3 className="font-bold text-xl mb-4">📚 Cara Menggunakan:</h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 className="font-bold text-cyan-300 mb-2">Untuk Cover E-book:</h4>
+              <ol className="space-y-2 text-sm">
+                <li>1. Buka Canva.com dan buat akun gratis</li>
+                <li>2. Pilih ukuran "E-book Cover" (1600 x 2400 px)</li>
+                <li>3. Tiru desain di atas atau buat sendiri</li>
+                <li>4. Ganti teks sesuai judul e-book Anda</li>
+                <li>5. Download sebagai PNG atau PDF</li>
+              </ol>
+            </div>
+            <div>
+              <h4 className="font-bold text-cyan-300 mb-2">Untuk Facebook Ads:</h4>
+              <ol className="space-y-2 text-sm">
+                <li>1. Buka Facebook Ads Manager</li>
+                <li>2. Pilih objective "Messages" atau "Traffic"</li>
+                <li>3. Copy paste teks iklan yang sudah disediakan</li>
+                <li>4. Upload desain cover sebagai gambar</li>
+                <li>5. Set WhatsApp sebagai tujuan pesan</li>
+                <li>6. Jalankan iklan dengan budget minimum</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        {/* Additional Titles Suggestion */}
+        <div className="mt-8 bg-white rounded-xl p-6">
+          <h3 className="font-bold text-xl text-gray-800 mb-4">
+            💡 9 Judul E-book Lainnya yang Potensial Viral:
+          </h3>
+          <div className="grid md:grid-cols-2 gap-3 text-sm">
+            <div className="bg-blue-50 p-3 rounded border-l-4 border-blue-500">
+              2. Panduan Lengkap Buku Pelaut: Dari Nol Hingga Berlayar
+            </div>
+            <div className="bg-green-50 p-3 rounded border-l-4 border-green-500">
+              3. Kaya dari Laut: Strategi Pelaut Hasilkan 100 Juta Pertama
+            </div>
+            <div className="bg-purple-50 p-3 rounded border-l-4 border-purple-500">
+              4. Dokumen Pelaut Tanpa Ribet: Seaman Book, BST, COC
+            </div>
+            <div className="bg-yellow-50 p-3 rounded border-l-4 border-yellow-500">
+              5. Survive & Thrive: Kehidupan Nyata Pelaut di Kapal
+            </div>
+            <div className="bg-pink-50 p-3 rounded border-l-4 border-pink-500">
+              6. Maritime Career Blueprint: Roadmap Karir Pemula-Officer
+            </div>
+            <div className="bg-indigo-50 p-3 rounded border-l-4 border-indigo-500">
+              7. Investasi Cerdas untuk Pelaut: Kelola Gaji Dollar
+            </div>
+            <div className="bg-red-50 p-3 rounded border-l-4 border-red-500">
+              8. Keselamatan Pelaut: Panduan Situasi Darurat di Laut
+            </div>
+            <div className="bg-teal-50 p-3 rounded border-l-4 border-teal-500">
+              9. Mental Tangguh Pelaut: Atasi Homesick & Stres
+            </div>
+            <div className="bg-orange-50 p-3 rounded border-l-4 border-orange-500 md:col-span-2">
+              10. Side Hustle Pelaut: Bisnis Sampingan Menguntungkan Saat Off-Duty
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default MaritimeEbookPromo;
